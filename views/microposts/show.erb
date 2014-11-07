@@ -1,0 +1,9 @@
+<h2><%= @micropost.title %></h2>
+<div class="posts">
+	<h2><%= @micropost.date_posted %></h2>
+	<p><%= @micropost.content %></p>
+	<h2>posted by: <%= @micropost.author.username %> from <%= @micropost.city %>, <%= @micropost.country.name %></h2>
+	<% @images.each do |image| %>
+		<img src="<%= image.img_url %>">
+	<% end %>	
+</div>	
