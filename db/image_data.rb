@@ -8,7 +8,7 @@ require_relative '../models/image.rb'
 
 Image.destroy_all
 
-author_data = [
+image_data = [
 	{
 	img_url: "http://i.imgur.com/RtC1RqU.jpg",
 	caption: "Newfoundland"
@@ -32,29 +32,29 @@ author_data = [
  	{
 	img_url: "http://i.imgur.com/z4NnL7H.jpg",
 	caption: "Missulo, Isle de Luanda"
-	}
+	},
 	{
 	img_url: "http://i.imgur.com/TrMxLRE.jpg",
 	caption: "Mirador de Lua"
 	}
-	{
-	img_url: "ross",
-	caption: "caption..."
-	}
-	{
-	img_url: "ross",
-	caption: "caption..."
-	}
-	{
-	img_url: "ross",
-	caption: "caption..."
-	}
-	{
-	img_url: "ross",
-	caption: "caption..."
-	}	
+	# {
+	# img_url: "ross",
+	# caption: "caption..."
+	# }
+	# {
+	# img_url: "ross",
+	# caption: "caption..."
+	# }
+	# {
+	# img_url: "ross",
+	# caption: "caption..."
+	# }
+	# {
+	# img_url: "ross",
+	# caption: "caption..."
+	# }	
 ]	
 
-author_data.each do |author|
-	Author.create(author)
+image_data.each do |image|
+	Image.create(image)
 end
