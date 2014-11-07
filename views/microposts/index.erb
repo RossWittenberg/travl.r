@@ -1,0 +1,9 @@
+<h2>Microposts</h2>
+	<% @microposts.each do |micropost| %>
+		<div class="container">
+			<h2><%= micropost.title %></h2>
+			<h2><%= micropost.date_posted %></h2>
+			<div id="post"><p><%= micropost.content %></p></div>
+			<h2>posted by<%= micropost.author.username %> from <%= micropost.city %>, <%= micropost.country.name %></h2>
+		</div>	 	
+	<% end %>
