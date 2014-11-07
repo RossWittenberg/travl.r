@@ -11,31 +11,37 @@ Image.destroy_all
 image_data = [
 	{
 	img_url: "http://i.imgur.com/RtC1RqU.jpg",
-	caption: "Newfoundland"
+	caption: "Newfoundland",
+	micropost_id: 3
 	},
 
 	{
 	img_url: "http://i.imgur.com/67eiR8L.jpg",
-	caption: "Nova Scotia"
+	caption: "Nova Scotia",
+	micropost_id: 4
 	},
 
  	{
 	img_url: "http://i.imgur.com/ZIY8cEf.jpg",
-	caption: "Pedres Negras"
+	caption: "Pedres Negras",
+	micropost_id: 5
 	},
 
  	{
 	img_url: "http://i.imgur.com/QxK2sxs.jpg",
-	caption: "Kalundula Falls"
+	caption: "Kalundula Falls",
+	micropost_id: 4
 	},
 
  	{
 	img_url: "http://i.imgur.com/z4NnL7H.jpg",
-	caption: "Missulo, Isle de Luanda"
+	caption: "Missulo, Isle de Luanda",
+	micropost_id: 5
 	},
 	{
 	img_url: "http://i.imgur.com/TrMxLRE.jpg",
-	caption: "Mirador de Lua"
+	caption: "Mirador de Lua",
+	micropost_id: 6
 	}
 	# {
 	# img_url: "ross",
