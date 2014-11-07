@@ -1,6 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:100,300);
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300);
 body {
-  font-family: 'Open Sans', 'Times New Roman', serif;
+  font-family: 'Oxygen', 'Helvetica', sans-serif;
   background-color: whitesmoke;
   width: 100%;
   height: 900px;
