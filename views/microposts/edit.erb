@@ -1,0 +1,43 @@
+<form action="/microposts/<%= @micropost.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT">
+
+	<label for="title">title<br>
+		<input type="text" name="micropost[title]" value="<%= @micropost.title %>">
+	</label><br>
+
+
+	<label for="author">author<br>
+		<select name="micropost[author_id]">
+			<% @authors.each do |author| %>
+				<option <%= "selected" if author == @micropost.author %> value="<%= author.id %>"><%= author.username %></option>			
+			<% end %>
+		</select>
+	</label><br>
+
+	<label for="date_posted">date posted<br>
+		<input type="text" name="micropost[date_posted]" value="<%= @micropost.date_posted %>">
+	</label><br>
+
+	<label for="content">content<br/>
+		<textarea rows="4" cols="50"></textarea name="micropost[content]" value="<%= @micropost.content %>"><br/>
+	</label>
+
+	<label for="country">country<br/>
+		<select name="micropost[country_id]">
+			<% @countries.each do |country| %>
+				<option value="<%=country.id%>"><%= country.name %></option>
+			<% end %>
+		</select>
+	</label><br/>
+
+	<label for="city">city<br>
+		<input type="text" name="micropost[city]" value="<%= @micropost.city %>">
+	</label><br>
+
+	<input type="submit" name="submit">
+</form>
+
+<form action="/microposts/<%= @micropost.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<button>delete</button>
+</form>

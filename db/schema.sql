@@ -24,7 +24,7 @@ CREATE TABLE tags (
 
 CREATE TABLE microposts (
 	id SERIAL PRIMARY KEY,
-	date_posted DATE,
+	date_posted VARCHAR(255),
 	title VARCHAR(100),
 	content VARCHAR(500),
 	city VARCHAR(255),

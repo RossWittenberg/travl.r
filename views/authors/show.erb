@@ -1,0 +1,13 @@
+<img src="<%= @author.avatar_img_url %>">
+<h2><%= @author.username %></h2>
+<h2>posts: 
+<% @microposts.each do |micropost| %>
+	<% if micropost.author_id == @author.id %>
+		<%= micropost.title %>
+	<% end %>		
+<% end %>
+
+<br/>
+<br/>
+
+<a href="/authors/<%= @author.id %>/edit">edit entry</a>	

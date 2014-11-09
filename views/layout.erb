@@ -3,20 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="reset.css">
-		<link rel="stylesheet" href="normalize.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
 	
 	<body>
 		<div class="header">
-			<a href="/"><h1>travel.r</h1></a>
+			<a href="/microposts"><img src="http://i.imgur.com/wc2PXq7.png"></a>
 		</div>
-		<div id="nav">
-			<a href="/microposts">microposts</a>
-			<a href="/authors">authors</a>
-		</div>
-		<section id="main">
+		
+		<div class="container">
 			<%= yield %>
-		</section>
+		</div>
 	</body>
 </html>				

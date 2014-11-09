@@ -21,7 +21,7 @@ author_data = [
 	},
 
  	{
-	username: "mega_travler4",
+	username: "mega_travler47",
 	avatar_img_url: "http://www.eilireland.org/sites/all/themes/d7eil/images/default-user-avatar.png"
 	},
 
@@ -31,7 +31,7 @@ author_data = [
 	},
 
  	{
-	username: "ross",
+	username: "rossW",
 	avatar_img_url: "http://www.eilireland.org/sites/all/themes/d7eil/images/default-user-avatar.png"
 	}	
 ]	

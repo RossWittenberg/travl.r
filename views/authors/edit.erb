@@ -1,0 +1,23 @@
+<form action="/authors/<%= @author.id %>" method="POST">
+
+	<input type="hidden" name="_method" value="PUT">
+
+	<label for="username">username<br>
+		<input type="text" name="author[username]" value="<%= @author.username %>">
+	</label><br>
+
+	<label for="avatar_img_url">avatar_img_url<br>
+		<input type="text" name="author[avatar_img_url]" value="<%= @author.avatar_img_url %>">
+	</label><br>
+
+	<input type="submit" name="submit">
+
+</form>
+
+<form action="/authors/<%= @author.id %>" method="POST">
+	
+	<input type="hidden" name="_method" value="DELETE">
+	
+	<button>delete</button>
+
+</form>

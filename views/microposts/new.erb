@@ -1,0 +1,28 @@
+<form action="/microposts" method="POST">
+	<label for="title">title<br/>
+		<input type="text" name="micropost[title]"><br/>
+	</label>
+	
+	<label for="date_posted">date (mm-dd-yyyy)<br/>
+		<input type="text" name="micropost[date_posted]"><br/>
+	</label>
+
+	<label for="content">post<br/>
+		<textarea rows="4" cols="50"></textarea name="micropost[content]"><br/>
+	</label>
+
+	<label for="city">city<br/>
+		<input type="text" name="micropost[city]"><br/>
+	</label>
+
+	<label for="country">country<br/>
+		<select name="micropost[country_id]">
+			<% @countries.each do |country| %>
+				<option value="<%=country.id%>"><%= country.name %></option>
+			<% end %>
+		</select>
+	</label><br/>
+	
+	<input type="submit" name="submit">
+</form>				
+

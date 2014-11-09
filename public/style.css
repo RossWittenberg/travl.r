@@ -1,7 +1,92 @@
-@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300);
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,500,700);
+
 body {
-  font-family: 'Oxygen', 'Helvetica', sans-serif;
-  background-color: whitesmoke;
-  width: 100%;
-  height: 900px;
+	font-family: 'Alegreya Sans', 'Helvetica', sans-serif;
+	background: url(http://subtlepatterns.com/patterns/halftone.png);
+	font-weight: 300;
+	background-repeat: repeat;
+	width: 100%;
 }
+
+.header {
+	width: 100%;
+	height: 340px;
+	margin: 0 auto;
+	background: url(http://www.hdbackgroundpoint.com/wp-content/uploads/2014/05/22/45665.jpeg);
+	background-position: 25% 21%;
+}
+
+.header img {
+	padding-top: 50px;
+	padding-left: 50px;
+}
+
+.header a:link {
+    color: darkcyan;
+    text-decoration: none;
+}
+
+.header a:visited {
+    color: darkcyan;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.header a:active {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.container {
+	width: 1050px;
+	padding: 24px;
+	margin: 40px auto;
+	background-color: floralwhite;
+}
+
+.container h1 {
+	font-size: 48px; 
+}
+
+.container h2 {
+	font-size: 40px;
+	padding-bottom: 20px;	
+}
+
+.container h3 {
+	font-size: 18px;	
+}
+
+
+.container p {
+	font-size: 14px;
+	background-color: white;
+	padding: 20px;
+	margin: 20px 0;	
+}
+
+.container a:link {
+    color: mediumturquoise;
+    text-decoration: none;
+}
+
+.container a:visited {
+    color: mediumturquoise;
+    text-decoration: none;
+}
+
+.container a:hover {
+    color: paleturquoise;
+    text-decoration: none;
+}
+
+.container a:active {
+    color: paleturquoise;
+    text-decoration: none;
+}
+
+

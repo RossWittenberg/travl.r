@@ -24,24 +24,24 @@ image_data = [
  	{
 	img_url: "http://i.imgur.com/ZIY8cEf.jpg",
 	caption: "Pedres Negras",
-	micropost_id: 5
+	micropost_id: 2
 	},
 
  	{
 	img_url: "http://i.imgur.com/QxK2sxs.jpg",
 	caption: "Kalundula Falls",
-	micropost_id: 4
+	micropost_id: 1
 	},
 
  	{
 	img_url: "http://i.imgur.com/z4NnL7H.jpg",
 	caption: "Missulo, Isle de Luanda",
-	micropost_id: 5
+	micropost_id: 2
 	},
 	{
 	img_url: "http://i.imgur.com/TrMxLRE.jpg",
 	caption: "Mirador de Lua",
-	micropost_id: 6
+	micropost_id: 3
 	}
 	# {
 	# img_url: "ross",

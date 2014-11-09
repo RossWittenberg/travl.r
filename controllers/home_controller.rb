@@ -1,3 +1,3 @@
-get '/' do
-	erb :'home/home'
+get "/" do
+	erb :"home/home", :layout => false
 end	
