@@ -2,7 +2,7 @@
 
 body {
 	font-family: 'Alegreya Sans', 'Helvetica', sans-serif;
-	background: url(http://subtlepatterns.com/patterns/halftone.png);
+	background-color: whitesmoke;
 	font-weight: 300;
 	background-repeat: repeat;
 	width: 100%;
@@ -22,22 +22,22 @@ body {
 }
 
 .header a:link {
-    color: darkcyan;
+    color: black;
     text-decoration: none;
 }
 
 .header a:visited {
-    color: darkcyan;
+    color: black;
     text-decoration: none;
 }
 
 .header a:hover {
-    color: whitesmoke;
+    color: dimgray;
     text-decoration: none;
 }
 
 .header a:active {
-    color: whitesmoke;
+    color: dimgray;
     text-decoration: none;
 }
 
@@ -45,52 +45,86 @@ body {
 	width: 1050px;
 	padding: 24px;
 	margin: 40px auto;
-	background-color: floralwhite;
 }
 
 .container h1 {
-	font-size: 48px; 
+	font-size: 64px; 
+	font-weight: 400px;
+	color: steelblue;
+	text-transform: uppercase;
 }
 
 .container h2 {
-	font-size: 40px;
-	padding-bottom: 20px;	
+	color: steelblue;
+	text-transform: uppercase;
+	font-size: 48px;
+	padding-bottom: 10px;
+	font-weight: 500px;	
 }
 
 .container h3 {
-	font-size: 18px;	
+	font-size: 20px;
+	padding-bottom: 10px;
+	font-weight: 400px;		
 }
 
-
 .container p {
-	font-size: 14px;
-	background-color: white;
-	padding: 20px;
-	margin: 20px 0;	
+	font-size: 16px;
+	padding: 18px 0;	
 }
 
 .container a:link {
-    color: mediumturquoise;
+    color: gray;
     text-decoration: none;
 }
 
 .container a:visited {
-    color: mediumturquoise;
+    color: gray;
     text-decoration: none;
 }
 
 .container a:hover {
-    color: paleturquoise;
+    color: silver;
     text-decoration: none;
 }
 
 .container a:active {
-    color: paleturquoise;
+    color: silver;
     text-decoration: none;
+}
+
+.container li {
+	display: inline;
+	list-style-type: none;
+}
+
+.post {
+	background-color: white;
+	padding: 24px;
 }
 
 .big_image img {
 	max-width: 1050px;
+}
+
+.thumbnails img {
+	border-radius: 8px;
+	max-height: 80px;
+	margin-right: 10px;
+}
+
+.countries {
+	-webkit-columns: 200px 4;
+  	-moz-columns: 200px 4;
+  	columns: 200px 4;
+  	-webkit-column-gap: 8px;
+  	-moz-column-gap: 8px;
+  	column-gap: 8px;
+}
+.countries h3 {
+	padding-bottom: 14px;
 
 }
+
+
 

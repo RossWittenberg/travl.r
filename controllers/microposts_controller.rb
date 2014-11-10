@@ -38,12 +38,23 @@ get "/microposts/:id/edit" do
 	erb :"/microposts/edit"
 end	
 
+post "/microposts/:id" do
+	micropost = Micropost.find(params[:id])
+  	tag = Tag.find(params[:id])
+  	if micropost.tags.push(tag)
+  		redirect "/microposts/#{micropost.id}"
+  	else
+  		redirect ("/microposts")
+  	end		
+end
+
 post "/microposts/:id/add_tag" do
 	micropost = Micropost.find(params[:id])
-  	tag = Tag.find(params[:tag_id])
-  	micropost.tags.push(tag)
-  	redirect "/microposts/#{micropost.id}"
+	tag = Tag.find(params[:tag_id])
+	micropost.tags.push(tag)
+	redirect "/microposts/#{micropost.id}"
 end
+
 
 # #edit exisiting post 
 put "/microposts/:id" do

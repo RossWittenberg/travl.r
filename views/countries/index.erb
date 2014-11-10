@@ -1,0 +1,12 @@
+<h2>countries</h2>
+
+<div class="countries">
+	
+<% @countries.each do |country| %>
+	<a href="/countries/<%= country.id %>">
+	<li><h3><%= country.name %></h3></li></a>
+	<% end %>
+
+</div>
+
+

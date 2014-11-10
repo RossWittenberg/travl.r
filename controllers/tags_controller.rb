@@ -8,11 +8,6 @@ get '/tags' do
 	erb :"/tags/index"
 end
 
-get '/tags/:id' do
-	@microposts = Micropost.all
-	@tag = Tag.find(params[:id])
-	erb :"/tags/show"
-end
 
 # >> create new tag <<		
 post "/tags" do
@@ -35,4 +30,9 @@ delete "/tags/remove_tag/:id" do
 end			
 
 
+get '/tags/:id' do
+	@microposts = Micropost.all
+	@tag = Tag.find(params[:id])
+	erb :"/tags/show"
+end
 

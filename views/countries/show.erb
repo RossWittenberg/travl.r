@@ -1,0 +1,39 @@
+<h2><%= @country.name %></h2>
+<% @microposts.each do |micropost| %>
+	<% if micropost.country_id == @country.id %>
+		<a href="/microposts/<%= micropost.id %>"><h3><%= micropost.title %></h3></a>
+	<% end %>
+<% end %>	
+	
+
+<% @microposts.each do |micropost| %>
+	<% if micropost.country_id == @country.id %>		
+	<% @images.each do |image| %>
+		<% if image.country_id == @country.id %>
+			<a href="/images/<%= image.id %>"><img src="<%= image.img_url %>"></h3></a>
+
+			<p><%= micropost.content %></p>
+			<h3><%= micropost.date_posted %></h3>
+			<h3>posted by: 
+			<a href="/authors/<%= micropost.author.id %>"><%= micropost.author.username %></a> | from: <%= micropost.city %>, <%= micropost.country.name %></h3><br/>
+		<% end %>
+		<% end %>
+	<% end %>	
+<% end %>	
+
+
+<h3>tags:</h3>
+<% @microposts.each do |micropost| %>
+	<% if micropost.country_id == @country.id %>
+	<% micropost.tags.each do |tag| %>
+	<li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
+	<% end %>
+	<% end %>
+
+<% end %>
+
+
+
+
+
+<br/>
