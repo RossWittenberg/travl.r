@@ -1,0 +1,12 @@
+<h2>images</h2>
+
+<div class="images">
+<% @images.each do |image| %>
+	<a href="/images/<%= image.id %>"><img src="<%= image.img_url %>"></a>
+	<h3><%= image.caption %></h3>
+<% end %>
+</div>
+
+<h3><a href="/images/new">add a new image</a></h3>
+
+

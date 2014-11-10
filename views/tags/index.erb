@@ -1,8 +1,25 @@
+<h2>tags</h2>
+
 <% @tags.each do |tag| %>
 	<div class="tags"><li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
 <% end %></div>
 
-<h2>add a new tag</h2>	
+<br/>
+
+<h3>add a new tag</h3>
+
+<br/>
+
+<form action="/tags" method="POST">
+	<label for="title">tag<br/>
+		<input type="text" value ="enter new tag" name="tag[name]">
+	</label>
+	
+	<button> + tag </button>
+</form>
+
+<br/>
+<br/>
 
 <form action=<% @tags.each do |tag| %>
 				"/tags/remove_tag/<%= tag.id %>"
@@ -13,7 +30,7 @@
 				<option value="<%= tag.id %>"><%= tag.name %></option>
 			<% end %>
 		</select>
-	
-	<button>remove tag</button>
+
+	<button> remove tag </button>
 
 </form>	

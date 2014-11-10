@@ -1,0 +1,19 @@
+<form action="/images" method="POST">
+	<label for="img_url">image url<br/>
+		<input type="text" name="image[img_url]"><br/>
+	</label>
+	
+	<label for="caption">caption<br/>
+		<input type="text" name="image[caption]"><br/>
+	</label>
+
+	<label for="micropost_id">micropost<br/>
+		<select name="image[micropost_id]">
+			<% @microposts.each do |micropost| %>
+				<option value="<%=micropost.id%>"><%= micropost.name %></option>
+			<% end %>
+		</select>
+	</label><br/>
+	
+	<input type="submit" name="submit">
+</form>	
