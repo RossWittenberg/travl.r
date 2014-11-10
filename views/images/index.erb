@@ -1,6 +1,6 @@
 <h2>images</h2>
 
-<div class="images">
+<div class="big_image">
 <% @images.each do |image| %>
 	<a href="/images/<%= image.id %>"><img src="<%= image.img_url %>"></a>
 	<h3><%= image.caption %></h3>

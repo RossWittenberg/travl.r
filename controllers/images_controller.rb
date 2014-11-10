@@ -8,17 +8,32 @@ get '/images' do
 	erb :"/images/index"
 end
 
+get '/images/new' do
+	@images = Image.all
+	@microposts = Micropost.all
+	erb :"/images/new"
+end
+
+get '/images/:id' do
+	@microposts = Micropost.all
+	@image = Image.find(params[:id])
+	erb :"/images/show"
+end
+
 # # >> create new image <<		
 post "/images" do
-	@microposts = Micropost.all
+
 	image = Image.new(params[:image])
 	if image.save	
 		redirect ("/images/#{image.id}")
 	else
-		redirect ("/images")	
+		redirect ("/images")
+	end		
 
 end
 	
+
+
 
 # # >> destroy existing image <<
 # delete "/images/remove_image/:id" do
@@ -27,10 +42,5 @@ end
 # 	redirect ("/images")
 # end			
 
-get '/images/:id' do
-	@microposts = Micropost.all
-	@image = image.find(params[:id])
-	erb :"/images/show"
-end
 
 

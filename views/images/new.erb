@@ -7,10 +7,10 @@
 		<input type="text" name="image[caption]"><br/>
 	</label>
 
-	<label for="micropost_id">micropost<br/>
+	<label for="micropost_id">post<br/>
 		<select name="image[micropost_id]">
 			<% @microposts.each do |micropost| %>
-				<option value="<%=micropost.id%>"><%= micropost.name %></option>
+				<option value="<%=micropost.id%>"><%= micropost.title %></option>
 			<% end %>
 		</select>
 	</label><br/>

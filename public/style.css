@@ -89,4 +89,8 @@ body {
     text-decoration: none;
 }
 
+.big_image img {
+	max-width: 1050px;
+
+}
 
