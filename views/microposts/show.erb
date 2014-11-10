@@ -32,12 +32,24 @@
 	</select>    
 
 <input type="submit" value="remove this tag from post">
-</form>
+</form><br/><br/>
 
 <br/><br/>
 
 <a href="/microposts/<%= @micropost.id %>/edit">edit entry</a>
 
+<!-- <form action="/images/" method="post">
+	<input type="hidden" name="_method" value="PUT">
+    
+    <select name="image_id">
+      <% @images.each do |image| %>
+        <option value="<%= image.id %>"><%= image.caption %></option>
+      <% end %>
+    </select>    
+
+    <input type="submit" value="add a photo to this post">
+
+</form><br/><br/> -->
 
 
 

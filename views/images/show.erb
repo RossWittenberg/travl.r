@@ -2,20 +2,19 @@
 	<img src="<%= @image.img_url %>">
 </div>
 <br/>
-<h3><%= @image.caption %></h3>
-<% @microposts.each do |micropost| %>
-	<% if micropost.id == @image.id %>
-	<a href="/microposts/<%= micropost.id %>"><h3><%= micropost.title %></h3></a>
-		<p><%= micropost.content %></p>
-		<h3><%= micropost.date_posted %></h3>
-	<h3>posted by: 
-		<a href="/authors/<%= micropost.author.id %>"><%= micropost.author.username %></a> | from: <%= micropost.city %>, <%= micropost.country.name %></h3><br/>
-	tags: <% micropost.tags.each do |tag| %>
-		<li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
+
+
+<% @countries.each do |country| %>
+	<% if country.id == @image.country_id %>
+		<a href="/countries/<%= country.id %>"><h3><%= country.name %></h3></a>
 	<% end %>
-	<% end %>	
+<% end %>			
+
+<% @microposts.each do |micropost| %>
+	<% if micropost.id == @image.micropost_id %>
+		<a href="/microposts/<%= micropost.id %>"><h3><%= micropost.title %></h3></a>		
+	<% end %>
 <% end %>	
-<br/>
 
 
 

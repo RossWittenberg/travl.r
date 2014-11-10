@@ -17,7 +17,7 @@
 
 	<label for="country_id">post<br/>
 		<select name="image[country_id]">
-			<% @countrys.each do |country| %>
+			<% @countries.each do |country| %>
 				<option value="<%=country.id%>"><%= country.name %></option>
 			<% end %>
 		</select>

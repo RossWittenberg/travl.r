@@ -4,7 +4,7 @@
 	<h3>posts: 
 	<% @microposts.each do |micropost| %>
 		<% if micropost.author_id == @author.id %>
-			<a href="/microposts/<%= micropost.id %>"><%= micropost.title %></a>
+			| <a href="/microposts/<%= micropost.id %>"><%= micropost.title %></a> |
 		<% end %>		
 	<% end %>
 </h3>

@@ -11,12 +11,14 @@ end
 
 get '/images/new' do
 	@images = Image.all
+	@countries = Country.all
 	@microposts = Micropost.all
 	erb :"/images/new"
 end
 
 get '/images/:id' do
 	@microposts = Micropost.all
+	@countries = Country.all
 	@image = Image.find(params[:id])
 	erb :"/images/show"
 end
@@ -31,6 +33,13 @@ post "/images" do
 		redirect ("/images")
 	end		
 
+end
+
+put "/images/:id" do
+  image = Image.find(params[:id])
+  if image.update(params[:image])
+  	redirect("/images/#{image.id}")
+  end
 end
 	
 # >> destroy existing image <<
