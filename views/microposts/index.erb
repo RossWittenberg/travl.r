@@ -5,6 +5,8 @@
 	<h3><%= micropost.date_posted %></h3>
 	<h3>posted by: 
 		<a href="/authors/<%= micropost.author.id %>"><%= micropost.author.username %></a> | from: <%= micropost.city %>, <%= micropost.country.name %></h3><br/><br/><hr><hr><br/>
+			
+	
 <% end %>
 
 <h2><a href="/microposts/new">add a new post</a>	
