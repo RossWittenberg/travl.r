@@ -2,10 +2,29 @@
 	<h2><%= @micropost.date_posted %></h2>
 	<p><%= @micropost.content %></p>
 	<h2>posted by: <%= @micropost.author.username %> from <%= @micropost.city %>, <%= @micropost.country.name %></h2>
+	
 	<% @images.each do |image| %>
 		<% if image.micropost_id == @micropost.id %>
 			<img src="<%= image.img_url %>">
 		<% end %>		
 	<% end %>
+	
+	<% @micropost.tags.each do |tag| %>
+		<h2><a href ="/tags/<%= tag.name %>"<%= tag.name %></a></h2>
+	<% end %>
+
+<form action="/microposts/<%= @micropost.id %>/add_tag" method="post">
+    <select name="tag_id">
+      <% @tags.each do |tag| %>
+        <option value="<%= tag.id %>"><%= tag.name %></option>
+      <% end %>
+    </select><br/>
+    <input type="submit" value="Add Track">
+</form><br/><br/>
 
 <a href="/microposts/<%= @micropost.id %>/edit">edit entry</a>
+
+
+
+
+

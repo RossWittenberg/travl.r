@@ -16,6 +16,7 @@ end
 get "/microposts/:id" do
 	@micropost = Micropost.find(params[:id])
 	@images = Image.all
+	@tags = Tag.all
 	erb :"/microposts/show", :layout => true
 end
 
@@ -36,6 +37,13 @@ get "/microposts/:id/edit" do
 	@countries = Country.all
 	erb :"/microposts/edit"
 end	
+
+post "/microposts/:id/add_tag" do
+	micropost = Micropost.find(params[:id])
+  	tag = Tag.find(params[:tag_id])
+  	micropost.tags.push(tag)
+  	redirect "/microposts/#{micropost.id}"
+end
 
 # #edit exisiting post 
 put "/microposts/:id" do
