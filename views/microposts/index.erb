@@ -5,20 +5,11 @@
 	<p><%= micropost.content %></p>	
 	<h3>posted by: 
 		<a href="/authors/<%= micropost.author.id %>"><%= micropost.author.username %></a> | from: <%= micropost.city %>, <%= micropost.country.name %></h3>
-	<h3>tags</h3> <% micropost.tags.each do |tag| %>
-		<li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
+	
+	<h3>tags</h3> <% micropost.tags.each do |tag | %>
+		<li><a href="/tags/<%= tag.id %>">| <%= tag.name %> |</a></li>
 	<% end %>	
 	<br/>
-	<div class="thumbnails">
-	<h3>images</h3>	
-	<% @microposts.each do |micropost| %>	
-		<% micropost.images.each do |image| %>
-			<% if image.micropost_id == micropost.id %>
-			<a href="/images/<%= image.id %>"><img src="<%= image.img_url %>"></a>
-			<% end %>
-		<% end %>	
-	<% end %>	
-	</div>
 	</div>	
 	<br/>
 	<hr><hr>

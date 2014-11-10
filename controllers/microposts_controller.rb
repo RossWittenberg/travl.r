@@ -17,14 +17,14 @@ get "/microposts/:id" do
 	@micropost = Micropost.find(params[:id])
 	@images = Image.all
 	@tags = Tag.all
-	erb :"/microposts/show", :layout => true
+	erb :"/microposts/show"
 end
 
 # create new post 
 post "/microposts" do
 	micropost = Micropost.new(params[:micropost])
 	if micropost.save
-		redirect ('/microposts/index')
+		redirect ('/microposts')
 	else 
 		redirect ('/micropost/new')
 	end		
@@ -58,7 +58,6 @@ post "/microposts/:id/remove_tag" do
 end
 
 
-
 post "/microposts/:id/add_tag" do
 	micropost = Micropost.find(params[:id])
 	tag = Tag.find(params[:tag_id])
@@ -80,4 +79,5 @@ end
 delete "/microposts/:id" do
 	micropost = Micropost.find(params[:id])
 	micropost.destroy
+	redirect "/microposts"
 end	

@@ -11,6 +11,14 @@
 		<textarea rows="4" cols="50"></textarea name="micropost[content]"><br/>
 	</label>
 
+	<label for="author">author<br/>
+		<select name="micropost[author_id]">
+			<% @authors.each do |author| %>
+				<option value="<%=author.id%>"><%= author.username %></option>
+			<% end %>
+		</select>
+	</label><br/>
+
 	<label for="city">city<br/>
 		<input type="text" name="micropost[city]"><br/>
 	</label>

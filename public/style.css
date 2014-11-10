@@ -17,7 +17,7 @@ body {
 }
 
 .header img {
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-left: 50px;
 }
 
@@ -39,6 +39,23 @@ body {
 .header a:active {
     color: dimgray;
     text-decoration: none;
+}
+
+.nav ul {
+	margin-top: 13px;
+}
+
+.nav li {
+	color: white;
+	font-size: 24px;
+	display: inline;
+	padding-left: 60px;
+	
+}
+
+.container img {
+	max-width: 128px;
+
 }
 
 .container {
@@ -108,10 +125,10 @@ body {
 }
 
 .thumbnails img {
-	border-radius: 8px;
-	max-height: 80px;
+	max-height: 100px;
 	margin-right: 10px;
 }
+
 
 .countries {
 	-webkit-columns: 200px 4;
