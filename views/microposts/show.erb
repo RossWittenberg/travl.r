@@ -24,9 +24,17 @@
     <input type="submit" value="tag this post">
 </form><br/><br/>
 
+<form action="/microposts/<%= @micropost.id %>/remove_tag" method="post">
+	<select name="tag_id"> 
+	  <% @micropost.tags.each do |tag| %>
+	    <option value="<%= tag.id %>"><%= tag.name %></option>
+	  <% end %>
+	</select>    
 
-<br/>
-<br/>
+<input type="submit" value="remove this tag from post">
+</form>
+
+<br/><br/>
 
 <a href="/microposts/<%= @micropost.id %>/edit">edit entry</a>
 

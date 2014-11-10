@@ -35,6 +35,7 @@ get "/microposts/:id/edit" do
 	@micropost = Micropost.find(params[:id])
 	@authors = Author.all
 	@countries = Country.all
+	@tags = Tag.all
 	erb :"/microposts/edit"
 end	
 
@@ -48,13 +49,22 @@ post "/microposts/:id" do
   	end		
 end
 
+
+post "/microposts/:id/remove_tag" do
+	micropost = Micropost.find(params[:id])
+	tag = Tag.find(params[:tag_id])
+	micropost.tags.destroy(tag)
+	redirect "/microposts/#{micropost.id}"
+end
+
+
+
 post "/microposts/:id/add_tag" do
 	micropost = Micropost.find(params[:id])
 	tag = Tag.find(params[:tag_id])
 	micropost.tags.push(tag)
 	redirect "/microposts/#{micropost.id}"
 end
-
 
 # #edit exisiting post 
 put "/microposts/:id" do

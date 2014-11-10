@@ -33,11 +33,37 @@
 	<label for="city">city<br>
 		<input type="text" name="micropost[city]" value="<%= @micropost.city %>">
 	</label><br>
-
+	
 	<input type="submit" name="submit">
+</form>
+
+
+
+<form action="/microposts/<%= @micropost.id %>/remove_tag" method="post">
+	<select name="tag_id"> 
+	  <% @micropost.tags.each do |tag| %>
+	    <option value="<%= tag.id %>"><%= tag.name %></option>
+	  <% end %>
+	</select>    
+
+<input type="submit" value="remove this tag from post">
+
+</form>
+
+
+
+<form action="/microposts/<%= @micropost.id %>/add_tag" method="post">
+	<select name="tag_id">
+	  <% @tags.each do |tag| %>
+	    <option value="<%= tag.id %>"><%= tag.name %></option>
+	  <% end %>
+	</select>    
+
+<input type="submit" value="tag this post">
+
 </form>
 
 <form action="/microposts/<%= @micropost.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
-	<button>delete</button>
+	<button>delete post</button>
 </form>
