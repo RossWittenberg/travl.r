@@ -7,8 +7,7 @@ DROP TABLE IF EXISTS images CASCADE;
 
 CREATE TABLE countries (
 	id SERIAL PRIMARY KEY,
-	name VARCHAR(255),
-	region VARCHAR(255)
+	name VARCHAR(255)
 );
 
 CREATE TABLE authors (
