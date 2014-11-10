@@ -35,6 +35,7 @@ CREATE TABLE images (
 	id SERIAL PRIMARY KEY,
 	img_url VARCHAR(512),
 	caption VARCHAR(255),
+	country_id INTEGER references countries,
 	micropost_id INTEGER references microposts
 );
 

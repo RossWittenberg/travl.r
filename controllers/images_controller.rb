@@ -2,7 +2,6 @@
 ## image ##
 ###########
 
-
 get '/images' do
 	@images = Image.all
 	erb :"/images/index"
