@@ -2,7 +2,7 @@
 	<h2><%= @micropost.date_posted %></h2>
 	<p><%= @micropost.content %></p>
 	<h2>posted by: <%= @micropost.author.username %> from <%= @micropost.city %>, <%= @micropost.country.name %></h2>
-	<div class="big_image">
+<div class="big_image">
 	<% @images.each do |image| %>
 		<% if image.micropost_id == @micropost.id %>
 			<img src="<%= image.img_url %>">

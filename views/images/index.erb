@@ -4,9 +4,22 @@
 <% @images.each do |image| %>
 	<a href="/images/<%= image.id %>"><img src="<%= image.img_url %>"></a>
 	<h3><%= image.caption %></h3>
-<% end %>
-</div>
+	
+	<% @countries.each do |country| %>
+		<% if country.id == image.country_id %>
+			<a href="/countries/<%= country.id %>"><h3><%= country.name %></h3></a>
+		<% end %>		
+	<% end %>
 
+	<% @microposts.each do |micropost| %>
+		<% if micropost.id == image.micropost_id %>
+		<a href="/microposts/<%= micropost.id %>"><h3><%= micropost.title %></h3></a>
+		<% end %>		
+	<% end %>
+<% end %>
+
+</div>
+<br/><br/>
 <h3><a href="/images/new">add a new image</a></h3>
 
 
