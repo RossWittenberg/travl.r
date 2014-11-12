@@ -1,8 +1,7 @@
-<div class="big_image">
+<div class="big_image_index">
 	<img src="<%= @image.img_url %>">
 </div>
 <br/>
-
 
 <% @countries.each do |country| %>
 	<% if country.id == @image.country_id %>
@@ -14,7 +13,8 @@
 	<% if micropost.id == @image.micropost_id %>
 		<a href="/microposts/<%= micropost.id %>"><h3><%= micropost.title %></h3></a>		
 	<% end %>
-<% end %>	
-
-
+<% end %><br/>
+<hr>
+<br/>
+<h3><a href="/images/<%= @image.id %>/edit">edit image details</a></h3>
 

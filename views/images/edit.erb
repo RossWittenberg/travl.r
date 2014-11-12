@@ -1,27 +1,38 @@
-<form action="/images" method="POST">
+<form action="/images/<%= @image.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT">
 	<label for="img_url">image url<br/>
-		<input type="text" name="image[img_url]"><br/>
-	</label>
+		<input type="text" name="image[img_url]" value="<%= @image.img_url %>">
+	</label><br/><br/>
 	
 	<label for="caption">caption<br/>
-		<input type="text" name="image[caption]"><br/>
-	</label>
+		<input type="text" name="image[caption]" value="<%= @image.caption %>">
+	</label><br/><br/>
 
 	<label for="micropost_id">post<br/>
 		<select name="image[micropost_id]">
 			<% @microposts.each do |micropost| %>
-				<option value="<%=micropost.id%>"><%= micropost.title %></option>
+				<option value="<%= micropost.id%>"><%= micropost.title %></option>
 			<% end %>
 		</select>
-	</label><br/>
+	</label><br/><br/>
 
 	<label for="country_id">post<br/>
 		<select name="image[country_id]">
-			<% @countrys.each do |country| %>
-				<option value="<%=country.id%>"><%= country.name %></option>
+			<% @countries.each do |country| %>
+				<option value="<%= country.id%>"><%= country.name %></option>
 			<% end %>
 		</select>
-	</label><br/>
+	</label><br/><br/>
 	
 	<input type="submit" name="submit">
 </form>	
+
+<br/><br/>
+
+<form action="/images/<%= @image.id %>/remove_image" method="POST">
+	
+	<input type="hidden" name="_method" value="DELETE">
+	
+	<button>delete this image</button>
+
+</form>

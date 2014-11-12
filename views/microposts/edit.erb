@@ -3,8 +3,7 @@
 
 	<label for="title">title<br>
 		<input type="text" name="micropost[title]" value="<%= @micropost.title %>">
-	</label><br>
-
+	</label><br/><br/>
 
 	<label for="author">author<br>
 		<select name="micropost[author_id]">
@@ -12,15 +11,11 @@
 				<option <%= "selected" if author == @micropost.author %> value="<%= author.id %>"><%= author.username %></option>			
 			<% end %>
 		</select>
-	</label><br>
-
-	<label for="date_posted">date posted<br>
-		<input type="text" name="micropost[date_posted]" value="<%= @micropost.date_posted %>">
-	</label><br>
+	</label><br/><br/>
 
 	<label for="content">content<br/>
-		<textarea rows="4" cols="50"></textarea name="micropost[content]" value="<%= @micropost.content %>"><br/>
-	</label>
+		<textarea rows="3" cols="100"><%= @micropost.content %></textarea name="micropost[content]" value="<%= @micropost.content %>">
+	</label><br/><br/>
 
 	<label for="country">country<br/>
 		<select name="micropost[country_id]">
@@ -28,16 +23,18 @@
 				<option value="<%=country.id%>"><%= country.name %></option>
 			<% end %>
 		</select>
-	</label><br/>
+	</label><br/><br/>
 
 	<label for="city">city<br>
 		<input type="text" name="micropost[city]" value="<%= @micropost.city %>">
-	</label><br>
+	</label><br><br/>
 	
-	<input type="submit" name="submit">
-</form>
-
-
+	<label for="tag_to_post">tags<br/>
+		<% @tags.each do |tag| %>
+    	<input <%= "checked" if @micropost.tags.include?(tag) %> type="checkbox" name="tags[]" value="<%= tag.id %>"><%= tag.name %><br>
+	<% end %>   
+	<input type="submit" name="submit"><br/><br/>
+</form>	
 
 <form action="/microposts/<%= @micropost.id %>/remove_tag" method="post">
 	<select name="tag_id"> 
@@ -45,25 +42,11 @@
 	    <option value="<%= tag.id %>"><%= tag.name %></option>
 	  <% end %>
 	</select>    
-
-<input type="submit" value="remove this tag from post">
-
-</form>
-
-
-
-<form action="/microposts/<%= @micropost.id %>/add_tag" method="post">
-	<select name="tag_id">
-	  <% @tags.each do |tag| %>
-	    <option value="<%= tag.id %>"><%= tag.name %></option>
-	  <% end %>
-	</select>    
-
-<input type="submit" value="tag this post">
-
+	<input type="submit" value="remove this tag from post"><br/><br/>
 </form>
 
 <form action="/microposts/<%= @micropost.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
-	<button>delete post</button>
-</form>
+	<h3>delete this post</h3>
+	<input type="submit" value="delete"><br/><br/>
+</form>	

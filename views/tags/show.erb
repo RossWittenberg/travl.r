@@ -1,7 +1,6 @@
 <h2><%= @tag.name %></h2>
-<h2>posts: 
 <% @tag.microposts.each do |micropost| %>
-	<h2><%= micropost.title %></h2>
+	<h3><a href="/microposts/<%= micropost.id %>"><%= micropost.title %></a></h3>
 <% end %>	
 
 <br/>

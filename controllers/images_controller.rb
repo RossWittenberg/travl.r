@@ -25,15 +25,24 @@ end
 
 # >> create new image <<		
 post "/images" do
-
 	image = Image.new(params[:image])
 	if image.save	
 		redirect ("/images/#{image.id}")
 	else
 		redirect ("/images")
 	end		
-
 end
+
+
+# edit image details
+get "/images/:id/edit" do
+	@image = Image.find(params[:id])
+	@countries = Country.all
+	@microposts = Micropost.all
+	erb :"/images/edit"
+end	
+
+
 
 put "/images/:id" do
   image = Image.find(params[:id])
@@ -41,9 +50,10 @@ put "/images/:id" do
   	redirect("/images/#{image.id}")
   end
 end
+
 	
 # >> destroy existing image <<
-delete "/images/remove_image/:id" do
+delete "/images/:id/remove_image" do
 	image = Image.find(params[:id])
 	image.destroy
 	redirect ("/images")

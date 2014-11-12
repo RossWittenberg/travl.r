@@ -1,4 +1,3 @@
-
 #display micropost index page
 get '/microposts' do
 	@microposts = Micropost.all
@@ -8,6 +7,8 @@ end
 # #display form to make new post 				
 get "/microposts/new" do
 	@countries = Country.all
+	@tags = Tag.all
+	@images = Image.all
 	@authors = Author.all
 	erb :"/microposts/new"
 end	
@@ -23,11 +24,17 @@ end
 # create new post 
 post "/microposts" do
 	micropost = Micropost.new(params[:micropost])
+	params[:tags].each do |tag_id|
+		tag = Tag.find(tag_id)
+		micropost.tags.push(tag)
+	end
+	params[:images].each do |image_id|
+		image = Image.find(image_id)
+		micropost.images.push(image)
+	end	
 	if micropost.save
-		redirect ('/microposts')
-	else 
-		redirect ('/micropost/new')
-	end		
+		redirect ('/microposts/#{micropost.id}')
+	end
 end
 
 # #display form to edit a post 
@@ -38,18 +45,7 @@ get "/microposts/:id/edit" do
 	@tags = Tag.all
 	erb :"/microposts/edit"
 end	
-
-post "/microposts/:id" do
-	micropost = Micropost.find(params[:id])
-  	tag = Tag.find(params[:id])
-  	if micropost.tags.push(tag)
-  		redirect "/microposts/#{micropost.id}"
-  	else
-  		redirect ("/microposts")
-  	end		
-end
-
-
+# remove a tag from a post
 post "/microposts/:id/remove_tag" do
 	micropost = Micropost.find(params[:id])
 	tag = Tag.find(params[:tag_id])
@@ -58,22 +54,16 @@ post "/microposts/:id/remove_tag" do
 end
 
 
-post "/microposts/:id/add_tag" do
-	micropost = Micropost.find(params[:id])
-	tag = Tag.find(params[:tag_id])
-	micropost.tags.push(tag)
-	redirect "/microposts/#{micropost.id}"
-end
-
-
 # #edit exisiting post 
-put "/microposts/:id" do
+put '/microposts/:id' do
 	micropost = Micropost.find(params[:id])
-	if micropost.update(params[:micropost])
-		redirect("/microposts/#{micropost.id}")
-	else
-		redirect("/microposts/#{micropost.id}/edit")	
-	end	
+	micropost.update(params[:micropost])
+	micropost.tags.destroy_all
+	params[:tags].each do |tag_id|
+		tag = Tag.find(tag_id)
+		micropost.tags.push(tag)
+	end
+	redirect "/microposts/#{micropost.id}"
 end
 
 # #destroy existing post 

@@ -2,55 +2,18 @@
 	<h3><%= @micropost.date_posted %></h3>
 	<p><%= @micropost.content %></p>
 	<h3>posted by: <%= @micropost.author.username %> from <%= @micropost.city %>, <%= @micropost.country.name %></h3>
+
+<h3>tags: </h3>
+<% @micropost.tags.each do |tag| %>
+	<a href ="/tags/<%= tag.id %>"> |<%= tag.name %>| </a>
+<% end %><br/>
 <div class="big_image">
 	<% @images.each do |image| %>
 		<% if image.micropost_id == @micropost.id %>
-			<img src="<%= image.img_url %>">
+			<a href="/images/<%= image.id %>"><img src="<%= image.img_url %>"></a>
 		<% end %>		
 	<% end %>
 </div>
-	<h3>tags: </h3>
-	<% @micropost.tags.each do |tag| %>
-		<h3><a href ="/tags/<%= tag.id %>"><%= tag.name %></a></h3>
-	<% end %>
-
-<form action="/microposts/<%= @micropost.id %>/add_tag" method="post">
-    <select name="tag_id">
-      <% @tags.each do |tag| %>
-        <option value="<%= tag.id %>"><%= tag.name %></option>
-      <% end %>
-    </select>    
-
-    <input type="submit" value="tag this post">
-</form><br/><br/>
-
-<form action="/microposts/<%= @micropost.id %>/remove_tag" method="post">
-	<select name="tag_id"> 
-	  <% @micropost.tags.each do |tag| %>
-	    <option value="<%= tag.id %>"><%= tag.name %></option>
-	  <% end %>
-	</select>    
-
-<input type="submit" value="remove this tag from post">
-</form><br/><br/>
-
-<br/><br/>
-
-<a href="/microposts/<%= @micropost.id %>/edit">edit entry</a>
-
-<!-- <form action="/images/" method="post">
-	<input type="hidden" name="_method" value="PUT">
-    
-    <select name="image_id">
-      <% @images.each do |image| %>
-        <option value="<%= image.id %>"><%= image.caption %></option>
-      <% end %>
-    </select>    
-
-    <input type="submit" value="add a photo to this post">
-
-</form><br/><br/> -->
-
-
-
-
+<br/>
+<hr>
+<h3><a href="/microposts/<%= @micropost.id %>/edit">edit this post</h3>

@@ -1,6 +1,6 @@
 <h2>images</h2>
 
-<div class="big_image">
+<div class="big_image_index">
 <% @images.each do |image| %>
 	<a href="/images/<%= image.id %>"><img src="<%= image.img_url %>"></a>
 	<h3><%= image.caption %></h3>
@@ -16,8 +16,9 @@
 		<a href="/microposts/<%= micropost.id %>"><h3><%= micropost.title %></h3></a>
 		<% end %>		
 	<% end %>
+<hr>	
 <% end %>
-
+<hr>
 </div>
 <br/><br/>
 <h3><a href="/images/new">add a new image</a></h3>

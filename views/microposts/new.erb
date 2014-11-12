@@ -1,15 +1,16 @@
 <form action="/microposts" method="POST">
+	
 	<label for="title">title<br/>
-		<input type="text" name="micropost[title]"><br/>
-	</label>
+		<input type="text" name="micropost[title]">
+	</label><br/><br/>
 	
 	<label for="date_posted">date (mm-dd-yyyy)<br/>
-		<input type="text" name="micropost[date_posted]"><br/>
-	</label>
+		<input type="text" name="micropost[date_posted]">
+	</label><br/><br/>
 
 	<label for="content">post<br/>
-		<textarea rows="4" cols="50"></textarea name="micropost[content]"><br/>
-	</label>
+		<textarea rows="3" cols="100"></textarea name="micropost[content]">
+	</label><br/><br/>
 
 	<label for="author">author<br/>
 		<select name="micropost[author_id]">
@@ -17,11 +18,9 @@
 				<option value="<%=author.id%>"><%= author.username %></option>
 			<% end %>
 		</select>
-	</label><br/>
+	</label><br/><br/>
 
-	<label for="city">city<br/>
-		<input type="text" name="micropost[city]"><br/>
-	</label>
+	<a href="/authors/new">add a new author</a><br/><br/>
 
 	<label for="country">country<br/>
 		<select name="micropost[country_id]">
@@ -29,8 +28,25 @@
 				<option value="<%=country.id%>"><%= country.name %></option>
 			<% end %>
 		</select>
-	</label><br/>
+	</label><br/><br/>
 	
-	<input type="submit" name="submit">
-</form>				
+	<label for="city">city<br/>
+		<input type="text" name="micropost[city]">
+	</label><br/><br/>
 
+
+	<label for="tags">tags<br>
+				<% @tags.each do |tag| %>
+					<input type="checkbox" name="tags[]" value="<%= tag.id %>"><%= tag.name %><br/>
+				<% end %>
+	</label><br/><br/>
+
+	<label for="images">images<br/><br/>
+				<% @images.each do |image| %>
+					<div class="thumbnails"><input type="checkbox" name="images[]" value="<%= image.id %>"><img src="<%= image.img_url %>"></div><br/>
+				<% end %>
+	</label><br/><br/>
+
+
+	<input type="submit" name="submit">
+</form>	

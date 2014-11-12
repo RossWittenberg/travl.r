@@ -52,10 +52,14 @@ body {
 	padding-left: 60px;
 	
 }
+.big_image img {
+	max-width: 515px;
+	padding: 4px 4px 0px 4px;
+	vertical-align: text-top;
+}
 
-.container img {
-	max-width: 128px;
-
+.big_image_index img {
+	max-width: 1000px;
 }
 
 .container {
@@ -120,13 +124,10 @@ body {
 	padding: 24px;
 }
 
-.big_image img {
-	max-width: 1050px;
-}
 
 .thumbnails img {
-	max-height: 100px;
-	margin-right: 10px;
+	max-height: 150px;
+	padding-left: 10px;
 }
 
 
@@ -137,9 +138,21 @@ body {
   	-webkit-column-gap: 8px;
   	-moz-column-gap: 8px;
   	column-gap: 8px;
+
 }
+
 .countries h3 {
 	padding-bottom: 14px;
+}
+
+.authors figure {
+		margin: 10px auto;
+		width: 128px
+
+}
+.authors img {
+	display: inline-block;
+	max-width: 128px;
 
 }
 

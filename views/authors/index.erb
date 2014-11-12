@@ -1,8 +1,15 @@
-<% @authors.each do |author| %>
-	<a href="/authors/<%= author.id %>">
-	<img src="<%= author.avatar_img_url %>">
-	<h2><%= author.username %></h2></a> 
+<div class="authors"><% @authors.each do |author| %>
+	<figure>
+		<a href="/authors/<%= author.id %>">
+		<img src="<%= author.avatar_img_url %>">
+		<figcaption><h3><%= author.username %></h3></figcaption></a> 
+	</figure>	
 <% end %>
 
-<h2><a href="/authors/new">add a new author</a>	
+</div>
 
+<hr>
+
+<a href="/authors/new">add a new author</a>
+
+<br/><br/>
